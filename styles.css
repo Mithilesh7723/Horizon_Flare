@@ -119,8 +119,9 @@ a:hover {
 }
 
 section {
-    padding: 5rem 0;
+    padding: 8rem 0;
     position: relative;
+    margin-bottom: -2px;
     overflow: hidden;
 }
 
@@ -571,8 +572,8 @@ input:checked + .slider:after {
 }
 
 .hero-content h1 {
-    line-height: 2.5;
-    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
     position: relative;
     overflow: hidden;
     background: linear-gradient(to right, var(--primary-color), var(--accent-color));
@@ -582,6 +583,7 @@ input:checked + .slider:after {
     text-fill-color: transparent;
     animation: shimmer 8s infinite linear;
     background-size: 200% 100%;
+    white-space: pre-line;
 }
 
 .hero-content p {
@@ -759,6 +761,7 @@ input:checked + .slider:after {
 .about {
     background-color: var(--bg-alt-color);
     position: relative;
+    margin-top: -2px;
 }
 
 .about::before {
@@ -1031,6 +1034,7 @@ input:checked + .slider:after {
     color: var(--white);
     position: relative;
     overflow: hidden;
+    margin-top: -2px;
 }
 
 .collaborate::before {
@@ -1127,6 +1131,7 @@ input:checked + .slider:after {
 /* Why Us Section */
 .why-us {
     background-color: var(--bg-color);
+    margin-top: -2px;
 }
 
 .features-grid {
@@ -1251,7 +1256,7 @@ input:checked + .slider:after {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background: linear-gradient(to bottom, #0a2342 0%, #081b35 100%); /* Gradient from original navy to darker shade */
     color: var(--white);
     padding: 4rem 0 2rem;
     position: relative;
@@ -1266,8 +1271,8 @@ footer::before {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 30%);
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 30%);
     z-index: 0;
 }
 
@@ -1468,19 +1473,48 @@ footer::before {
         font-size: 15px;
     }
     
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-    
-    .about-content, 
-    .collaborate-content {
-        flex-direction: column;
-        gap: 3rem;
-    }
-    
     .hero .container {
         flex-direction: column;
         gap: 3rem;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .hero-content {
+        margin-left: 0;
+        align-items: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+        text-align: center;
+        line-height: 1.3;
+        padding: 0 1rem;
+    }
+    
+    .hero-content p {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    .core-values {
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .cube-wrapper {
@@ -1553,28 +1587,61 @@ footer::before {
     .footer-info {
         width: 100%;
     }
+    
+    .hero-content h1 {
+        font-size: 2.75rem;
+        line-height: 1.4;
+        padding: 0 0.5rem;
+        word-spacing: -2px;
+    }
+    
+    .hero-content p {
+        font-size: 1.15rem;
+        padding: 0 1rem;
+    }
+    
+    .about-content {
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
     .hero-content h1 {
         font-size: 2.5rem;
+        line-height: 1.3;
+        padding: 0 0.5rem;
+        word-break: break-word;
+        hyphens: auto;
     }
     
     .hero-content p {
         font-size: 1.1rem;
-    }
-    
-    .section-header h2 {
-        font-size: 1.85rem;
+        padding: 0 0.5rem;
     }
     
     .cta-buttons {
         flex-direction: column;
         gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
     }
     
     .cta-buttons .btn {
         width: 100%;
+    }
+    
+    .about-content {
+        padding: 0.5rem;
+    }
+    
+    .core-values {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .value {
+        width: 100%;
+        max-width: 300px;
     }
     
     .cube-wrapper {
@@ -1886,7 +1953,7 @@ footer::before {
 
 .custom-shape-divider-top .shape-fill,
 .custom-shape-divider-bottom .shape-fill {
-    fill: var(--white);
+    fill: var(--bg-alt-color);
 }
 
 /* Project Progress */
@@ -2142,25 +2209,7 @@ footer::before {
 
 /* Footer Wave */
 .footer-wave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.footer-wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
-}
-
-.footer-wave .shape-fill {
-    fill: var(--primary-color);
-    opacity: 0.4;
+    display: none;
 }
 
 /* Enhanced animation for hover effects */
@@ -2203,3 +2252,159 @@ footer::before {
     opacity: 1;
     transform: translateX(0);
 }
+/* Section Separators */
+.section-separator {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    bottom: -2px;
+    left: 0;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.section-separator.top {
+    top: -2px;
+    bottom: auto;
+    transform: rotate(180deg);
+}
+
+.section-separator svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 120px;
+    animation: wave-animation 20s linear infinite;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Add hover effect */
+.section-separator:hover svg {
+    animation-play-state: paused;
+}
+
+/* Make separators responsive */
+@media (max-width: 768px) {
+    .section-separator {
+        height: 80px;
+    }
+    
+    .section-separator svg {
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-separator {
+        height: 60px;
+    }
+    
+    .section-separator svg {
+        height: 60px;
+    }
+}
+
+/* Section Wave Separators */
+.wave-separator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.wave-separator.top {
+    top: 0;
+    bottom: auto;
+    transform: rotate(180deg);
+}
+
+.wave-separator svg {
+    position: relative;
+    display: block;
+    width: calc(140% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+
+.wave-separator path {
+    fill: var(--bg-alt-color);
+}
+
+/* Customize wave colors for different sections */
+.hero .wave-separator path {
+    fill: var(--bg-alt-color);
+}
+
+.about .wave-separator path {
+    fill: var(--bg-color);
+}
+
+.projects .wave-separator path {
+    fill: var(--bg-alt-color);
+}
+
+.collaborate .wave-separator path {
+    fill: var(--bg-color);
+}
+
+.why-us .wave-separator path {
+    fill: var(--bg-alt-color);
+}
+
+/* Add wave animation */
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0) rotateY(180deg);
+    }
+    50% {
+        transform: translateX(-25%) rotateY(180deg);
+    }
+    100% {
+        transform: translateX(0) rotateY(180deg);
+    }
+}
+
+.wave-separator svg {
+    animation: wave-animation 25s linear infinite;
+}
+
+/* Make waves responsive */
+@media (max-width: 992px) {
+    .wave-separator svg {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wave-separator svg {
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wave-separator svg {
+        height: 60px;
+    }
+}
+
+/* Add this right after the why-us section closing tag and before the footer */
+<div class="wave-separator">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="currentColor" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,144C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+</div>

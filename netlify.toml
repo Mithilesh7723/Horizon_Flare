@@ -5,9 +5,21 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Handle Next.js static assets
+# Force Next.js static assets to be served with correct MIME types
 [[headers]]
-  for = "/_next/static/*"
+  for = "/_next/static/css/*"
+  [headers.values]
+    Content-Type = "text/css"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/js/*"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/media/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -15,6 +27,13 @@
   for = "/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Add asset forwarding to properly serve static files
+[[redirects]]
+  from = "/_next/static/*"
+  to = "/_next/static/:splat"
+  status = 200
+  force = true
 
 # This makes sure Netlify handles Next.js routing correctly
 [[redirects]]

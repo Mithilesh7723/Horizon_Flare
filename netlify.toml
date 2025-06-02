@@ -5,6 +5,17 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Handle Next.js static assets
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # This makes sure Netlify handles Next.js routing correctly
 [[redirects]]
   from = "/*"

@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone', // Optimize for Netlify deployment
   reactStrictMode: true,
   images: {
     domains: ['uiavatar.com'], // Add any external image domains here if needed

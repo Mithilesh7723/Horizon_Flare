@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // Optimize for Netlify deployment
+  output: 'export', // Static site generation for Netlify
+  distDir: 'out', // Output directory for the export
   reactStrictMode: true,
   images: {
     domains: ['uiavatar.com', 'images.unsplash.com'], // Add any external image domains here if needed

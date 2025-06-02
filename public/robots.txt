@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://horizonflare.in/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Allow access to important pages
+Allow: /services/vapt
+Allow: /services/development
+Allow: /services/training
+Allow: /innovation-lab
+Allow: /about
+Allow: /contact
+Allow: /blog
+Allow: /case-studies
+
+# Allow these service specific keywords for better SEO
+Allow: /cybersecurity-services-india
+Allow: /penetration-testing-india
+Allow: /vapt-services-india
+Allow: /web-development-security-india
+Allow: /ethical-hacking-training-india

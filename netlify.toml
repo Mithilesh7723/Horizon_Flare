@@ -1,25 +1,13 @@
 [build]
-  command = "npm run build"
+  command = "npm run netlify-build"
   publish = "out"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
-# Force Next.js static assets to be served with correct MIME types
+# Cache static assets
 [[headers]]
-  for = "/_next/static/css/*"
-  [headers.values]
-    Content-Type = "text/css"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/_next/static/js/*"
-  [headers.values]
-    Content-Type = "application/javascript"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/_next/static/media/*"
+  for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -28,14 +16,7 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Add asset forwarding to properly serve static files
-[[redirects]]
-  from = "/_next/static/*"
-  to = "/_next/static/:splat"
-  status = 200
-  force = true
-
-# This makes sure Netlify handles Next.js routing correctly
+# Single page application handling
 [[redirects]]
   from = "/*"
   to = "/index.html"

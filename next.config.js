@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // Static site generation for Netlify
-  distDir: 'out', // Output directory for the export
   reactStrictMode: true,
   images: {
+    unoptimized: true, // Required for static export
     domains: ['uiavatar.com', 'images.unsplash.com'], // Add any external image domains here if needed
-    unoptimized: false, // Enable image optimization
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048], // Responsive image sizes
     imageSizes: [16, 32, 48, 64, 96, 128, 256], // Icon sizes
   },

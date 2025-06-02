@@ -335,7 +335,7 @@ export default function ServicesPage() {
                     className="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                     asChild
                   >
-                    <Link href="/services/innovation">
+                    <Link href="/innovation-lab">
                       Learn More <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </Button>

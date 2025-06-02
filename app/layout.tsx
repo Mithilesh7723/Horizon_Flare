@@ -75,6 +75,8 @@ export default function RootLayout({
         <LocalBusinessSchema />
         <ServiceSchema />
         <link rel="canonical" href="https://horizonflare.in" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="geo.region" content="IN-MP" />
         <meta name="geo.placename" content="Bhopal" />
         <meta name="geo.position" content="23.2599;77.4126" />

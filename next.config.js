@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // Static site generation for Netlify
+  distDir: 'out', // Output directory for the export
   reactStrictMode: true,
   images: {
     unoptimized: true, // Required for static export

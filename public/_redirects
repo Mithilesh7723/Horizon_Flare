@@ -1,0 +1,3 @@
+# Netlify redirect rules
+/favicon.ico /favicon.ico 200
+/*.png /:splat.png 200

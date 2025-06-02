@@ -3,7 +3,7 @@ const nextConfig = {
   output: 'standalone', // Optimize for Netlify deployment
   reactStrictMode: true,
   images: {
-    domains: ['uiavatar.com'], // Add any external image domains here if needed
+    domains: ['uiavatar.com', 'images.unsplash.com'], // Add any external image domains here if needed
     unoptimized: false, // Enable image optimization
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048], // Responsive image sizes
     imageSizes: [16, 32, 48, 64, 96, 128, 256], // Icon sizes

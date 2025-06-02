@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# This makes sure Netlify handles Next.js routing correctly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

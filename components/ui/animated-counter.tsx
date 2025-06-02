@@ -11,7 +11,8 @@ interface AnimatedCounterProps {
 }
 
 export function AnimatedCounter({ end, duration = 2000, suffix = "", prefix = "" }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0)
+  // Start with the end value by default to ensure it shows even without JS
+  const [count, setCount] = useState(end)
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,

@@ -2,6 +2,8 @@
 const nextConfig = {
   output: 'export', // Static site generation for Netlify
   distDir: 'out', // Output directory for the export
+  trailingSlash: true, // Add trailing slashes to all routes
+  assetPrefix: '', // Use relative paths for assets
   reactStrictMode: true,
   images: {
     unoptimized: true, // Required for static export

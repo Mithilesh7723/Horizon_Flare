@@ -2,87 +2,103 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { OrganizationSchema, LocalBusinessSchema, ServiceSchema } from "@/components/structured-data"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://horizonflare.in"),
-  title: {
-    default: "Horizon Flare | Igniting Ideas. Powering Impact. | Top Cybersecurity & Innovation Studio in India",
-    template: "%s | Horizon Flare - Cybersecurity & Innovation",
-  },
+  title: "Horizon Flare - India's Innovation Powerhouse | Cybersecurity & Web Development",
   description:
-    "Horizon Flare is India's premier innovation studio & cybersecurity company based in Bhopal, Madhya Pradesh, creating practical, scalable tech solutions for real-world problems. Offering professional VAPT, secure development, ethical hacking courses across Delhi, Mumbai, and all India.",
-  keywords:
-    "Horizon Flare, HorizonFlare, horizon flare,horizonflare,Horizon Flare India, cybersecurity company India, VAPT services India, penetration testing India, ethical hacking India, cybersecurity courses India, secure web development, innovation lab India, student tech projects India, cybersecurity Bhopal, Madhya Pradesh cybersecurity, cybersecurity training Bhopal, Mumbai cybersecurity, Delhi security testing, tech innovation India, startup incubation India, ethical hacking Hyderabad, cloud security assessment Chennai, API security testing Pune, technology solutions NCR, IT security services Kolkata, web application firewall Gujarat, network security Ahmedabad",
-  authors: [{ name: "Horizon Flare Team" }],
+    "Leading cybersecurity, web development, and innovation services in India. MSME certified company offering VAPT, penetration testing, ethical hacking training, and cutting-edge technology solutions in Bhopal, Bangalore, and Pune.",
+  keywords: [
+    "cybersecurity India",
+    "VAPT services",
+    "penetration testing",
+    "web development company India",
+    "ethical hacking training Bhopal",
+    "innovation lab India",
+    "MSME certified IT company",
+    "top cybersecurity company in Bhopal",
+    "web development Bangalore",
+    "penetration testing Pune",
+    "Horizon Flare",
+  ],
+  authors: [{ name: "Horizon Flare", url: "https://horizonflare.in" }],
   creator: "Horizon Flare",
   publisher: "Horizon Flare",
   robots: "index, follow",
-  alternates: {
-    canonical: "https://horizonflare.in",
-  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://horizonflare.in",
     siteName: "Horizon Flare",
-    title: "Horizon Flare | Igniting Ideas. Powering Impact.",
+    title: "Horizon Flare - India's Innovation Powerhouse | Cybersecurity & Web Development",
     description:
-      "Horizon Flare is an innovation studio focused on creating practical, scalable tech solutions for real-world problems across India. Leading in cybersecurity, VAPT, and secure development.",
+      "Leading cybersecurity, web development, and innovation services in India. MSME certified company offering VAPT, penetration testing, ethical hacking training, and cutting-edge technology solutions.",
     images: [
       {
-        url: "/banner.png",
+        url: "/og-image.png", 
         width: 1200,
         height: 630,
-        alt: "Horizon Flare - Cybersecurity & Innovation Studio",
+        alt: "Horizon Flare - Cybersecurity and Web Development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Horizon Flare | Igniting Ideas. Powering Impact.",
+    title: "Horizon Flare - India's Innovation Powerhouse | Cybersecurity & Web Development",
     description:
-      "India's top innovation studio & cybersecurity company creating practical, scalable tech solutions for businesses and organizations across the country.",
-    images: ["/banner.png"],
-    creator: "@HorizonFlare",
-    site: "@HorizonFlare",
+      "Top-tier cybersecurity, web development, and innovation services in India. MSME certified, specializing in VAPT, ethical hacking training, and more.",
+    images: ["/twitter-image.png"], 
+    creator: "@horizonflare", 
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon-precomposed.png",
-    },
   },
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=5",
-  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#000000" }],
-  generator: "Next.js"
+  generator: 'v0.dev'
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Horizon Flare",
+  url: "https://horizonflare.in",
+  logo: "https://horizonflare.in/logo.png", 
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-77229-62509",
+    contactType: "customer service",
+    areaServed: "IN",
+    availableLanguage: ["en"],
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bhopal",
+    addressLocality: "Madhya Pradesh",
+    postalCode: "462001",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    "https://twitter.com/horizonflare", 
+    "https://linkedin.com/company/horizonflare",
+  ],
+  description:
+    "Leading cybersecurity, web development, and innovation services in India. MSME certified company offering VAPT, penetration testing, ethical hacking training, and cutting-edge technology solutions.",
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang="en">
-      <head>
-        <OrganizationSchema />
-        <LocalBusinessSchema />
-        <ServiceSchema />
-        <link rel="canonical" href="https://horizonflare.in" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="geo.region" content="IN-MP" />
-        <meta name="geo.placename" content="Bhopal" />
-        <meta name="geo.position" content="23.2599;77.4126" />
-        <meta name="ICBM" content="23.2599, 77.4126" />
-      </head>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+      <body className={inter.className}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        {children}
+      </body>
     </html>
   )
 }
